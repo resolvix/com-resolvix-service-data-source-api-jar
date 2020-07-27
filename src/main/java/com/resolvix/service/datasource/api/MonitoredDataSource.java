@@ -1,6 +1,7 @@
 package com.resolvix.service.datasource.api;
 
 import com.resolvix.service.datasource.api.event.AvailabilityChange;
+import com.resolvix.service.datasource.api.event.RecentChangeHistory;
 import com.resolvix.service.datasource.api.monitor.Monitor;
 
 import javax.sql.DataSource;
@@ -8,7 +9,7 @@ import java.time.Duration;
 import java.util.List;
 
 public interface MonitoredDataSource<A extends Availability, R extends Reliability, P extends Performance>
-    extends DataSource
+    extends DataSource, RecentChangeHistory
 {
     /**
      * Returns a reference to the {@link Monitor} of the data source.
@@ -74,21 +75,4 @@ public interface MonitoredDataSource<A extends Availability, R extends Reliabili
      * @return the duration the data source has been 'down'
      */
     Duration getDowntime();
-
-    /**
-     * Returns the list of change events that have taken place recently,
-     * sorted from the most latest change event to the earliest, as recorded
-     * and maintained by the monitor.
-     *
-     * The concept of "recently" is not defined, however, the implementation
-     * should record a sufficient period of status change events to evidence
-     * the monitors' assessment of the availability and status of the data
-     * source.
-     *
-     * @return a list of recent change events, in descending order
-     *  according to the time the status change event took place
-     */
-    default List<AvailabilityChange<A>> getRecentChangeHistory() {
-        return getMonitor().getRecentChangeHistory();
-    }
 }

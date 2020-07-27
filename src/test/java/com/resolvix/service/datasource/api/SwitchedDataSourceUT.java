@@ -23,6 +23,16 @@ public class SwitchedDataSourceUT {
         public boolean isOnline() {
             return ONLINE.equals(this);
         }
+
+        @Override
+        public boolean isOffline() {
+            return OFFLINE.equals(this);
+        }
+
+        @Override
+        public boolean isNotAvailable() {
+            return NOT_AVAILABLE.equals(this);
+        }
     }
 
     @Mock

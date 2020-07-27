@@ -21,7 +21,7 @@ public interface Monitor<A>
      *
      * @return the availability of the monitor data source.
      */
-    Availability getAvailability();
+    A getAvailability();
 
     /**
      * Returns the reliability of the data source for the relevant

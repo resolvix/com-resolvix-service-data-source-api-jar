@@ -25,7 +25,21 @@ public class SelectorListenerUT {
 
         @Override
         public boolean isOnline() {
-            return ONLINE.equals(this);
+            return ONLINE.equals(this)
+                || WARNING_OFFLINE.equals(this)
+                || WARNING_NOT_AVAILABLE.equals(this);
+        }
+
+        @Override
+        public boolean isOffline() {
+            return OFFLINE.equals(this)
+                || WARNING_ONLINE.equals(this)
+                || WARNING_NOT_AVAILABLE.equals(this);
+        }
+
+        @Override
+        public boolean isNotAvailable() {
+            return NOT_AVAILABLE.equals(this);
         }
     }
 
