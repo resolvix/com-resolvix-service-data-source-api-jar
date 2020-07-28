@@ -1,23 +1,24 @@
 package com.resolvix.service.datasource.api;
 
-import com.resolvix.service.datasource.api.event.AvailabilityChange;
 import com.resolvix.service.datasource.api.event.RecentChangeHistory;
-import com.resolvix.service.datasource.api.monitor.Monitor;
 
 import javax.sql.DataSource;
 import java.time.Duration;
-import java.util.List;
 
 public interface MonitoredDataSource<A extends Availability, R extends Reliability, P extends Performance>
     extends DataSource, RecentChangeHistory
 {
-    /**
-     * Returns a reference to the {@link Monitor} of the data source.
-     *
-     * @param <M> the type of monitor
-     * @return the monitor
-     */
-    <M extends Monitor<A>> M getMonitor();
+    enum Event {
+
+        CONNECTION_FAILED;
+
+    }
+
+    interface Listener
+    {
+
+        void signalEvent(Event event);
+    }
 
     /**
      * Returns the availability of the data source, according to the

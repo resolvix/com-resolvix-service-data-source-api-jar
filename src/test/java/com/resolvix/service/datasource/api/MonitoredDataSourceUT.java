@@ -59,7 +59,6 @@ public class MonitoredDataSourceUT {
 
     @Test
     public void monitoredDataSourceLifecycle() throws Exception {
-        monitoredDataSource.getMonitor();
         monitoredDataSource.getAvailability();
         monitoredDataSource.getReliability();
         monitoredDataSource.getPerformance();
