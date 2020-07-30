@@ -1,6 +1,6 @@
 package com.resolvix.service.datasource.spi;
 
-import com.resolvix.service.datasource.api.monitor.Monitor;
+import com.resolvix.lib.monitor.api.Probe;
 
 import javax.sql.DataSource;
 
@@ -20,15 +20,15 @@ public interface DataSourceManager {
     <D extends DataSource> D getDataSource(String name);
 
     /**
-     * Returns a data source {@link Monitor}.
+     * Returns a data source {@link Probe}.
      *
      * @param name the name of the monitor
      * @param <A> the type representing the availability
      *  of the data source being monitored
-     * @param <M> the {@link Monitor} type
+     * @param <M> the {@link Probe} type
      * @return the monitor
      */
-    <A, M extends Monitor<A>> M getMonitor(String name);
+    <A, M extends Probe<A>> M getMonitor(String name);
 
     /**
      * Returns a data source of type {@link com.resolvix.service.datasource.api.MonitoredDataSource},

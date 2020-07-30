@@ -13,6 +13,8 @@ public class MonitoredDataSourceUT {
 
         UP,
 
+        SATURATED,
+
         DOWN;
 
         @Override
