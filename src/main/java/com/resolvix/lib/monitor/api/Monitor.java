@@ -4,6 +4,8 @@ import java.util.List;
 
 public interface Monitor<P> {
 
+    P state();
+
     void addListener(Listener<P> listener);
 
     List<Listener<P>> getListeners();
