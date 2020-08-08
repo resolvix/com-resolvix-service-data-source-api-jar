@@ -1,11 +1,9 @@
 package com.resolvix.service.datasource.api;
 
-import com.resolvix.service.datasource.api.event.RecentChangeHistory;
-import com.resolvix.service.datasource.api.event.StateChange;
+import com.resolvix.lib.event.api.RecentChangeHistory;
 import com.resolvix.service.datasource.api.selector.Selector;
 
 import javax.sql.DataSource;
-import java.util.List;
 
 /**
  * Defines an interface for a switched data source examples of which

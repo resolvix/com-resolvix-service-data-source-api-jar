@@ -1,8 +1,14 @@
-package com.resolvix.service.datasource.api.event;
+package com.resolvix.lib.event.api;
 
 import java.util.List;
 
-public interface RecentChangeHistory {
+/**
+ * Defines an interface for obtaining the recent change history of a
+ * given property.
+ *
+ * @param <P> the type of the property
+ */
+public interface RecentChangeHistory<P> {
 
     /**
      * Returns the list of change events that have taken place recently,
@@ -16,5 +22,5 @@ public interface RecentChangeHistory {
      * @return a list of recent change events, in descending order
      *  according to the time the status change event took place
      */
-    List<Change> getRecentChangeHistory();
+    List<Change<P>> getRecentChangeHistory();
 }

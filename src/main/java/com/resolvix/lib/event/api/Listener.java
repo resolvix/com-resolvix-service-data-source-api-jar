@@ -1,4 +1,4 @@
-package com.resolvix.lib.monitor.api;
+package com.resolvix.lib.event.api;
 
 public interface Listener<P> {
 

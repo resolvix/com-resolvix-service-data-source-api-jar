@@ -1,6 +1,6 @@
 package com.resolvix.service.datasource.api;
 
-import com.resolvix.service.datasource.api.event.RecentChangeHistory;
+import com.resolvix.lib.event.api.RecentChangeHistory;
 
 import javax.sql.DataSource;
 import java.time.Duration;
