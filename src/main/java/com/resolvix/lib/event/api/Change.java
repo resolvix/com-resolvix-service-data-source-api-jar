@@ -11,6 +11,13 @@ import java.time.Instant;
 public interface Change<P> {
 
     /**
+     * Returns the previous state of the relevant property.
+     *
+     * @return the previous property state
+     */
+    P getPreviousState();
+
+    /**
      * Returns the new state of the relevant property.
      *
      * @return the property state

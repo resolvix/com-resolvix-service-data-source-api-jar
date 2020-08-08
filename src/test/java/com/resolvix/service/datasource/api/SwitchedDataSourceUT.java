@@ -1,5 +1,6 @@
 package com.resolvix.service.datasource.api;
 
+import com.resolvix.lib.junction.api.Selector;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -36,7 +37,10 @@ public class SwitchedDataSourceUT {
     }
 
     @Mock
-    private SwitchedDataSource<State> switchedDataSource;
+    private Selector<State> selector;
+
+    @Mock
+    private SwitchedDataSource<State, Selector<State>> switchedDataSource;
 
     @Before
     public void before() {

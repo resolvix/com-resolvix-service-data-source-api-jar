@@ -1,7 +1,7 @@
 package com.resolvix.service.datasource.api;
 
 import com.resolvix.lib.event.api.RecentChangeHistory;
-import com.resolvix.service.datasource.api.selector.Selector;
+import com.resolvix.lib.junction.api.Selector;
 
 import javax.sql.DataSource;
 
@@ -17,8 +17,8 @@ import javax.sql.DataSource;
  * @param <S> the type representing the state of the
  *  data source selector
  */
-public interface SwitchedDataSource<S>
-    extends DataSource, RecentChangeHistory
+public interface SwitchedDataSource<P, S extends Selector<P>>
+    extends DataSource, RecentChangeHistory<P>
 {
 
     /**
@@ -26,12 +26,12 @@ public interface SwitchedDataSource<S>
      *
      * @return the selector
      */
-    Selector<S> getSelector();
+    S getSelector();
 
     /**
      * Returns the state of the data source selector.
      *
      * @return the reported status of the data source
      */
-    S getState();
+    P getState();
 }

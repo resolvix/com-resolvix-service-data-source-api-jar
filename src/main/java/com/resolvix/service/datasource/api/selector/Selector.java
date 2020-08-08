@@ -12,6 +12,7 @@ import java.util.List;
  * @param <S> the type representing the availability of
  *  the data source subject to monitoring
  */
+@Deprecated
 public interface Selector<S> {
 
     /**

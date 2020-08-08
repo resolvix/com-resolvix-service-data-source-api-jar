@@ -1,6 +1,6 @@
 package com.resolvix.lib.monitor.api;
 
-import com.resolvix.lib.event.api.ListenerEnabled;
+import com.resolvix.lib.event.api.Subject;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import java.util.List;
  * @param <P> the type representing the property
  */
 public interface Monitor<P>
-    extends ListenerEnabled<P>
+    extends Subject<P>
 {
 
     /**
