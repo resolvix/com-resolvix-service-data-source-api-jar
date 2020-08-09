@@ -2,5 +2,5 @@ package com.resolvix.lib.event.api;
 
 public interface Listener<P> {
 
-    void signal(P property);
+    void notify(P property);
 }

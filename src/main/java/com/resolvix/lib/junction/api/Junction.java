@@ -1,7 +1,7 @@
 package com.resolvix.lib.junction.api;
 
-import com.resolvix.lib.event.api.ListenerEnabled;
 import com.resolvix.lib.event.api.RecentChangeHistory;
+import com.resolvix.lib.event.api.Subject;
 
 /**
  * Defines an interface for a junction that switches objects of type
@@ -14,7 +14,7 @@ import com.resolvix.lib.event.api.RecentChangeHistory;
  *  to the state of the selector property
  */
 public interface Junction<P, S extends Selector<P>, R>
-    extends ListenerEnabled<P>, RecentChangeHistory<P>
+    extends Subject<P>, RecentChangeHistory<P>
 {
 
     /**

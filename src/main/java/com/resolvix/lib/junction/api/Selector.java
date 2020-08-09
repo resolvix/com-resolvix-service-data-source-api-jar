@@ -3,7 +3,7 @@ package com.resolvix.lib.junction.api;
 
 import com.resolvix.lib.event.api.Listener;
 import com.resolvix.lib.event.api.RecentChangeHistory;
-import com.resolvix.lib.event.api.ListenerEnabled;
+import com.resolvix.lib.event.api.Subject;
 
 /**
  * Defines an interface for a {@link Selector}, the purpose of which is to -
@@ -18,7 +18,7 @@ import com.resolvix.lib.event.api.ListenerEnabled;
  * @param <P> the type representing the state of the selector property
  */
 public interface Selector<P>
-    extends ListenerEnabled<P>, RecentChangeHistory<P>
+    extends Subject<P>, RecentChangeHistory<P>
 {
 
     /**
