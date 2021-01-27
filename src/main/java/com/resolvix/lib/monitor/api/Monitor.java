@@ -7,7 +7,8 @@ import java.util.List;
 /**
  * Defines an interface for a generic form of monitor the purpose
  * of which is to determine a given property of a given resource
- * by reference to one or more {@link Probe}.
+ * by reference to internal monitor state or one or more
+ * {@link Probe}.
  *
  * @param <P> the type representing the property
  */
